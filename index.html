@@ -145,7 +145,11 @@
       <a href="#resume" style="margin: 0 1rem; font-weight: bold;">Resume</a>
       <a href="#contact" style="margin: 0 1rem; font-weight: bold;">Contact</a>
     </nav>
-    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark/Light</button>
+    <img id="themeToggleImg"
+     src="https://cdn-icons-png.flaticon.com/512/169/169367.png"
+     alt="Toggle Theme"
+     style="width: 40px; height: 40px; cursor: pointer; position: fixed; top: 20px; right: 20px; z-index: 1000;">
+
     <h1>✨ My Portfolio</h1>
 
     <div class="section" id="about">
@@ -338,6 +342,19 @@ function typeAboutText() {
   }
 }
 window.addEventListener('load', typeAboutText);
+
+const themeImg = document.getElementById('themeToggleImg');
+
+themeImg.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+  // Switch icon based on mode
+  const isDark = document.body.classList.contains('dark-mode');
+  themeImg.src = isDark
+    ? 'https://cdn-icons-png.flaticon.com/512/869/869869.png'  // Sun icon
+    : 'https://cdn-icons-png.flaticon.com/512/169/169367.png'; // Moon icon
+});
+
 </script>
 </body>
 </html>
