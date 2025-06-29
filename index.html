@@ -29,27 +29,14 @@
       padding: 2rem;
       text-align: center;
     }
-    $1
-  text-align: center;$2
-    .toggle-btn {
-      float: right;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border: none;
-      background: #333;
-      color: #fff;
-      border-radius: 5px;
+    .section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    $1
-  text-align: center;$2
     .section.visible {
       opacity: 1;
       transform: translateY(0);
-    }
-    ul {
-      list-style-position: inside;
-      display: inline-block;
-      text-align: left;
     }
     .projects {
       display: grid;
@@ -66,22 +53,22 @@
       background: #1f2937;
       border-color: #444;
     }
-    a {
-      color: #2563eb;
-      text-decoration: underline;
+    .bar-container {
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
     }
-    .buttons button {
-      margin: 0.25rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background: none;
-    }
-    .active-category {
-      background: #2563eb;
+    .bar {
+      height: 24px;
+      line-height: 24px;
+      background-color: #2563eb;
       color: white;
-      border-color: #2563eb;
+      text-align: right;
+      padding-right: 10px;
+      border-radius: 10px 0 0 10px;
+      width: 0;
+      transition: width 2s ease;
     }
     img.profile-pic {
       width: 150px;
@@ -91,50 +78,67 @@
       margin-bottom: 1rem;
       border: 4px solid #2563eb;
     }
-  .flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 200px;
-  perspective: 1000px;
-}
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
-.flip-card-front {
-  background-color: #fff;
-  color: black;
-}
-.dark-mode .flip-card-front {
-  background-color: #1f2937;
-  color: white;
-}
-.flip-card-back {
-  background-color: #2563eb;
-  color: white;
-  transform: rotateY(180deg);
-}
-</style>
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      height: 200px;
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .flip-card-front {
+      background-color: #fff;
+      color: black;
+    }
+    .dark-mode .flip-card-front {
+      background-color: #1f2937;
+      color: white;
+    }
+    .flip-card-back {
+      background-color: #2563eb;
+      color: white;
+      transform: rotateY(180deg);
+    }
+    .active-category {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+    .buttons button {
+      margin: 0.25rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: none;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -153,169 +157,184 @@
     <h1>✨ My Portfolio</h1>
 
     <div class="section" id="about">
-  <img src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png" alt="Profile Picture" class="profile-pic">
-  <h2>About Me</h2>
-  <p id="about-text"></p>
-</div>
+      <img src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png" alt="Profile Picture" class="profile-pic">
+      <h2>About Me</h2>
+      <p id="about-text"></p>
     </div>
 
-<div class="section" id="resume">
-  <div class="container" style="text-align: center;">
-    <h2>Resume</h2>
-    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:f43676e4-4036-48c1-9474-9cf4d54ae058" >
-      <button style="padding: 0.75rem 1.5rem; font-size: 1rem; background-color: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer;">
-        Resume
-      </button>
-    </a>
-  </div>
-</div>
-
- <div class="section" id="skills">
-  <div class="container" style="text-align: center;">
-    <h2>Skills</h2>
-    <div class="skill-bar" style="max-width: 600px; margin: 0 auto;">
-      <p>C++</p>
-      <div class="bar-container"><div class="bar" data-percentage="85">0%</div></div>
-      <p>Python</p>
-      <div class="bar-container"><div class="bar" data-percentage="90">0%</div></div>
-      <p>Java</p>
-      <div class="bar-container"><div class="bar" data-percentage="75">0%</div></div>
-      <p>JavaScript</p>
-      <div class="bar-container"><div class="bar" data-percentage="80">0%</div></div>
-      <p>HTML/CSS</p>
-      <div class="bar-container"><div class="bar" data-percentage="88">0%</div></div>
-      <p>React.js</p>
-      <div class="bar-container"><div class="bar" data-percentage="78">0%</div></div>
-      <p>Node.js/Express.js</p>
-      <div class="bar-container"><div class="bar" data-percentage="72">0%</div></div>
-      <p>MongoDB/SQL</p>
-      <div class="bar-container"><div class="bar" data-percentage="70">0%</div></div>
+    <div class="section" id="resume">
+      <h2>Resume</h2>
+      <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:f43676e4-4036-48c1-9474-9cf4d54ae058" target="_blank">
+        <button style="padding: 0.75rem 1.5rem; font-size: 1rem; background-color: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer;">
+          Download Resume
+        </button>
+      </a>
     </div>
-  </div>
-</div>
 
-
-<style>
-  .bar-container {
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 1rem;
-  }
-  .bar {
-    height: 24px;
-    line-height: 24px;
-    background-color: #2563eb;
-    color: white;
-    text-align: right;
-    padding-right: 10px;
-    border-radius: 10px 0 0 10px;
-    animation: fillBar 2s ease-out forwards;
-    width: 0;
-  }
-  .visible .bar {
-    animation: fillBar 2s ease-out forwards;
-  }
-  @keyframes fillBar {
-    0% { width: 0; }
-    100% { width: var(--target-width); }
-  }
-
-.bar-container {
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-.bar {
-  height: 24px;
-  line-height: 24px;
-  background-color: #2563eb;
-  color: white;
-  text-align: right;
-  padding-right: 10px;
-  border-radius: 10px 0 0 10px;
-  width: 0;
-  transition: width 2s ease;
-}
-
-
-</style>
+    <div class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="skill-bar" style="max-width: 600px; margin: 0 auto;">
+        <p>C++</p>
+        <div class="bar-container"><div class="bar" data-percentage="85">0%</div></div>
+        <p>Python</p>
+        <div class="bar-container"><div class="bar" data-percentage="90">0%</div></div>
+        <p>Java</p>
+        <div class="bar-container"><div class="bar" data-percentage="75">0%</div></div>
+        <p>JavaScript</p>
+        <div class="bar-container"><div class="bar" data-percentage="80">0%</div></div>
+        <p>HTML/CSS</p>
+        <div class="bar-container"><div class="bar" data-percentage="88">0%</div></div>
+        <p>React.js</p>
+        <div class="bar-container"><div class="bar" data-percentage="78">0%</div></div>
+        <p>Node.js/Express.js</p>
+        <div class="bar-container"><div class="bar" data-percentage="72">0%</div></div>
+        <p>MongoDB/SQL</p>
+        <div class="bar-container"><div class="bar" data-percentage="70">0%</div></div>
+      </div>
+    </div>
 
     <div class="section" id="projects">
-  <div class="container" style="text-align: center;">
-    <h2>Projects</h2>
-    <div class="buttons" id="categoryButtons" style="margin-bottom: 1rem;"></div>
-    <div class="projects" id="projectList" style="justify-content: center;"></div>
-  </div>
-</div>
+      <h2>Projects</h2>
+      <div class="buttons" id="categoryButtons" style="margin-bottom: 1rem;"></div>
+      <div class="projects" id="projectList"></div>
+    </div>
 
     <div class="section" id="contact">
-  <div class="section" id="contact">
-  <div class="container" style="text-align: center;">
-    <h2>Contact Me</h2>
-    <form action="mailto:chodabathulamohanarangaji@gmail.com" method="POST" enctype="text/plain" style="margin-top: 2rem;">
-      <input type="text" name="name" placeholder="Your Name" required 
-        style="display: block; width: 80%; max-width: 500px; padding: 0.5rem; margin: 0.5rem auto; border-radius: 5px; border: 1px solid #ccc;">
-      
-      <input type="email" name="email" placeholder="Your Email" required 
-        style="display: block; width: 80%; max-width: 500px; padding: 0.5rem; margin: 0.5rem auto; border-radius: 5px; border: 1px solid #ccc;">
-      
-      <textarea name="message" rows="4" placeholder="Your Message" required 
-        style="display: block; width: 80%; max-width: 500px; padding: 0.5rem; margin: 0.5rem auto; border-radius: 5px; border: 1px solid #ccc;"></textarea>
-      
-      <button type="submit" 
-        style="margin-top: 1rem; padding: 0.5rem 1rem; background: #2563eb; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
-        Send
-      </button>
-    </form>
-
-    <div style="margin-top: 2rem; font-size: 0.95rem;">
-      <p>📞 Phone: <a href="tel:+918985696659">+91 89856 96659</a></p>
-      <p>💻 GitHub: <a href="https://github.com/mohan-1705" target="_blank">github.com/mohan-1705</a></p>
-      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/chodabathula-mohana-rangaji-b55b9b269/" target="_blank">chodabathula-mohana-rangaji</a></p>
-      <p style="margin-top: 1rem; color: #888;">&copy; 2025 Chodabathula Mohana Rangaji. All rights reserved.</p>
+      <h2>Contact Me</h2>
+      <form action="mailto:chodabathulamohanarangaji@gmail.com" method="POST" enctype="text/plain" style="margin-top: 2rem;">
+        <input type="text" name="name" placeholder="Your Name" required style="display: block; width: 80%; max-width: 500px; padding: 0.5rem; margin: 0.5rem auto; border-radius: 5px; border: 1px solid #ccc;">
+        <input type="email" name="email" placeholder="Your Email" required style="display: block; width: 80%; max-width: 500px; padding: 0.5rem; margin: 0.5rem auto; border-radius: 5px; border: 1px solid #ccc;">
+        <textarea name="message" rows="4" placeholder="Your Message" required style="display: block; width: 80%; max-width: 500px; padding: 0.5rem; margin: 0.5rem auto; border-radius: 5px; border: 1px solid #ccc;"></textarea>
+        <button type="submit" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #2563eb; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+          Send
+        </button>
+      </form>
+      <div style="margin-top: 2rem; font-size: 0.95rem;">
+        <p>📞 Phone: <a href="tel:+918985696659">+91 89856 96659</a></p>
+        <p>💻 GitHub: <a href="https://github.com/mohan-1705" target="_blank">github.com/mohan-1705</a></p>
+        <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/chodabathula-mohana-rangaji-b55b9b269/" target="_blank">chodabathula-mohana-rangaji</a></p>
+        <p style="margin-top: 1rem; color: #888;">&copy; 2025 Chodabathula Mohana Rangaji. All rights reserved.</p>
+      </div>
     </div>
   </div>
-</div>
 
-    </div>
-    </div>
-<script src="https://unpkg.com/scrollreveal"
-    const projects = [
-      { title: 'Job Portal', category: 'Web App', description: 'A job portal built with modern tech for job listings and applications.', link: 'https://github.com/mohan-1705/Job-portal' },
-      { title: 'My Voice Assistant', category: 'AI/ML', description: 'A Python-based voice assistant to automate tasks with speech commands.', link: 'https://github.com/mohan-1705/My_Voice_Assistant' },
-      { title: 'Resume Builder', category: 'Web App', description: 'A web app to create professional resumes and download them as PDF.', link: 'https://github.com/mohan-1705/resume_builder_main' },
-      { title: 'Streamlit App', category: 'Data Viz', description: 'Web app with Streamlit to demonstrate data visualization.', link: 'https://github.com/mohan-1705/my-streamlit-app' },
-      { title: 'Employ Feedback System', category: 'Web App', description: 'System for collecting and analyzing employee feedback.', link: 'https://github.com/mohan-1705/the-wormhole-Employ-Feedback-Management-System' }
+  <script>
+    const aboutText = "Hello! I’m Chodabathula Mohana Rangaji, a final-year CSE student at SRKR Engineering College, Bhimavaram. I am a passionate Full Stack Developer with a strong interest in learning new skills and building impactful digital products. My enthusiasm for web development, curiosity to explore emerging technologies, and adaptability in collaborative environments have driven me to successfully deliver projects across diverse domains like voice automation, job portals, and resume creation.";
+
+    const aboutTextElement = document.getElementById('about-text');
+    let index = 0;
+    function typeAboutText() {
+      if (index < aboutText.length) {
+        aboutTextElement.innerHTML += aboutText.charAt(index);
+        index++;
+        setTimeout(typeAboutText, 30);
+      }
+    }
+    window.addEventListener('load', typeAboutText);
+
+    const themeImg = document.getElementById('themeToggleImg');
+    themeImg.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      themeImg.src = isDark ? 'https://cdn-icons-png.flaticon.com/512/869/869869.png' : 'https://cdn-icons-png.flaticon.com/512/169/169367.png';
+    });
+
+    const sections = document.querySelectorAll('.section');
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('visible');
+        } else {
+          section.classList.remove('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    function animateSkillBars() {
+      const skillSection = document.getElementById('skills');
+      const bars = document.querySelectorAll('.bar');
+      if (!skillSection.classList.contains('animated') && skillSection.getBoundingClientRect().top < window.innerHeight * 0.85) {
+        bars.forEach(bar => {
+          const target = parseInt(bar.getAttribute('data-percentage'));
+          let current = 0;
+          const interval = setInterval(() => {
+            if (current >= target) {
+              clearInterval(interval);
+            } else {
+              current++;
+              bar.style.width = current + '%';
+              bar.textContent = current + '%';
+            }
+          }, 15);
+        });
+        skillSection.classList.add('animated');
+      }
+    }
+    window.addEventListener('scroll', animateSkillBars);
+    window.addEventListener('load', animateSkillBars);
+
+const projects = [
+      {
+        title: "Voice Assistant",
+        desc: "A voice assistant developed in Python using speech recognition and text-to-speech libraries. It automates system tasks and provides verbal responses based on commands.",
+        link: "https://github.com/mohan-1705/My_Voice_Assistant",
+        category: "AI/ML"
+      },
+      {
+        title: "Job Portal",
+        desc: "A full-stack job portal built with the MERN stack (MongoDB, Express, React, Node.js). It allows job seekers to apply for jobs and employers to post openings.",
+        link: "https://github.com/mohan-1705/Job-portal",
+        category: "Web App"
+      },
+      {
+        title: "Employee Feedback System",
+        desc: "A feedback collection and management web app developed using HTML, CSS, JS and backend tech for storing and visualizing employee feedback.",
+        link: "https://github.com/mohan-1705/the-wormhole-Employ-Feedback-Management-System",
+        category: "Web App"
+      },
+      {
+        title: "Resume Builder",
+        desc: "A resume builder developed using React.js, Supabase for database, Vite for project scaffolding, and FastAPI for backend support. Allows PDF export of resumes.",
+        link: "https://github.com/mohan-1705/resume_builder_main",
+        category: "Web App"
+      },
+      {
+        title: "Streamlit App",
+        desc: "An interactive data visualization app built with Python and Streamlit. Showcases graphical insights from datasets using charts and filters.",
+        link: "https://github.com/mohan-1705/my-streamlit-app",
+        category: "Data Viz"
+      }
     ];
 
     const categories = ['All', 'Web App', 'AI/ML', 'Data Viz'];
-    const categoryButtons = document.getElementById('categoryButtons');
-    const projectList = document.getElementById('projectList');
+    const categoryButtons = document.getElementById("categoryButtons");
+    const projectList = document.getElementById("projectList");
     let selectedCategory = 'All';
 
     function renderProjects() {
       projectList.innerHTML = '';
       const filtered = selectedCategory === 'All' ? projects : projects.filter(p => p.category === selectedCategory);
       filtered.forEach(project => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-      </div>
-      <div class="flip-card-back">
-        <h3>${project.title}</h3>
-        <a href="${project.link}" target="_blank">View Source Code</a>
-      </div>
-    </div>
-  </div>;
-projectList.appendChild(card);
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h3>${project.title}</h3>
+                <p>${project.desc}</p>
+              </div>
+              <div class="flip-card-back">
+                <a href="${project.link}" target="_blank" style="color: white; text-decoration: underline;">View Code</a>
+              </div>
+            </div>
+          </div>
+        `;
+        projectList.appendChild(card);
       });
     }
 
@@ -333,77 +352,6 @@ projectList.appendChild(card);
     });
 
     renderProjects();
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-
-    // Scroll reveal effect
-    const sections = document.querySelectorAll('.section');
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < triggerBottom) {
-          section.classList.add('visible');
-        } else {
-          section.classList.remove('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-  const aboutText = Hello! I’m Chodabathula Mohana Rangaji, a final-year CSE student at SRKR Engineering College, Bhimavaram. I am a passionate Full Stack Developer with a strong interest in learning new skills and building impactful digital products. My enthusiasm for web development, curiosity to explore emerging technologies, and adaptability in collaborative environments have driven me to successfully deliver projects across diverse domains like voice automation, job portals, and resume creation.;
-
-const aboutTextElement = document.getElementById('about-text');
-let index = 0;
-function typeAboutText() {
-  if (index < aboutText.length) {
-    aboutTextElement.innerHTML += aboutText.charAt(index);
-    index++;
-    setTimeout(typeAboutText, 30);
-  }
-}
-window.addEventListener('load', typeAboutText);
-
-const themeImg = document.getElementById('themeToggleImg');
-
-themeImg.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-
-  // Switch icon based on mode
-  const isDark = document.body.classList.contains('dark-mode');
-  themeImg.src = isDark
-    ? 'https://cdn-icons-png.flaticon.com/512/869/869869.png'  // Sun icon
-    : 'https://cdn-icons-png.flaticon.com/512/169/169367.png'; // Moon icon
-});
-
-function animateSkillBars() {
-  const skillSection = document.getElementById('skills');
-  const bars = document.querySelectorAll('.bar');
-
-  if (!skillSection.classList.contains('animated') &&
-      skillSection.getBoundingClientRect().top < window.innerHeight * 0.85) {
-    bars.forEach(bar => {
-      const target = parseInt(bar.getAttribute('data-percentage'));
-      let current = 0;
-      const interval = setInterval(() => {
-        if (current >= target) {
-          clearInterval(interval);
-        } else {
-          current++;
-          bar.style.width = current + '%';
-          bar.textContent = current + '%';
-        }
-      }, 15);
-    });
-    skillSection.classList.add('animated');
-  }
-}
-
-window.addEventListener('scroll', animateSkillBars);
-window.addEventListener('load', animateSkillBars);
-
-</script>
+  </script>
 </body>
 </html>
