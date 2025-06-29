@@ -152,14 +152,14 @@
 
     <h1>✨ My Portfolio</h1>
 
-    <div class="section sr-section" id="about">
+    <div class="section" id="about">
   <img src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png" alt="Profile Picture" class="profile-pic">
   <h2>About Me</h2>
   <p id="about-text"></p>
 </div>
     </div>
 
-<div class="section sr-section" id="resume">
+<div class="section" id="resume">
   <div class="container" style="text-align: center;">
     <h2>Resume</h2>
     <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:f43676e4-4036-48c1-9474-9cf4d54ae058" >
@@ -173,7 +173,7 @@
  <div class="section" id="skills">
   <div class="container" style="text-align: center;">
     <h2>Skills</h2>
-    <div class="section sr-section" id="skills">
+    <div class="skill-bar" style="max-width: 600px; margin: 0 auto;">
       <p>C++</p>
       <div class="bar-container"><div class="bar" data-percentage="85">0%</div></div>
       <p>Python</p>
@@ -243,7 +243,7 @@
 
 </style>
 
-    <div class="section sr-section" id="projects">
+    <div class="section" id="projects">
   <div class="container" style="text-align: center;">
     <h2>Projects</h2>
     <div class="buttons" id="categoryButtons" style="margin-bottom: 1rem;"></div>
@@ -251,7 +251,8 @@
   </div>
 </div>
 
-    <div class="section sr-section" id="contact">
+    <div class="section" id="contact">
+  <div class="section" id="contact">
   <div class="container" style="text-align: center;">
     <h2>Contact Me</h2>
     <form action="mailto:chodabathulamohanarangaji@gmail.com" method="POST" enctype="text/plain" style="margin-top: 2rem;">
@@ -301,7 +302,7 @@
       filtered.forEach(project => {
         const card = document.createElement('div');
         card.className = 'card';
-        card.innerHTML = `
+        card.innerHTML = 
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
@@ -313,7 +314,7 @@
         <a href="${project.link}" target="_blank">View Source Code</a>
       </div>
     </div>
-  </div>`;
+  </div>;
 projectList.appendChild(card);
       });
     }
@@ -352,7 +353,7 @@ projectList.appendChild(card);
     };
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
-  const aboutText = `Hello! I’m Chodabathula Mohana Rangaji, a final-year CSE student at SRKR Engineering College, Bhimavaram. I am a passionate Full Stack Developer with a strong interest in learning new skills and building impactful digital products. My enthusiasm for web development, curiosity to explore emerging technologies, and adaptability in collaborative environments have driven me to successfully deliver projects across diverse domains like voice automation, job portals, and resume creation.`;
+  const aboutText = Hello! I’m Chodabathula Mohana Rangaji, a final-year CSE student at SRKR Engineering College, Bhimavaram. I am a passionate Full Stack Developer with a strong interest in learning new skills and building impactful digital products. My enthusiasm for web development, curiosity to explore emerging technologies, and adaptability in collaborative environments have driven me to successfully deliver projects across diverse domains like voice automation, job portals, and resume creation.;
 
 const aboutTextElement = document.getElementById('about-text');
 let index = 0;
@@ -402,14 +403,6 @@ function animateSkillBars() {
 
 window.addEventListener('scroll', animateSkillBars);
 window.addEventListener('load', animateSkillBars);
-
-  ScrollReveal().reveal('.sr-section', {
-    distance: '50px',
-    origin: 'bottom',
-    opacity: 0,
-    duration: 800,
-    interval: 200
-  });
 
 </script>
 </body>
