@@ -155,27 +155,30 @@
 </div>
     </div>
 
-    <div class="section" id="skills">
-  <h2>Skills</h2>
-  <div class="skill-bar" style="text-align: center; max-width: 600px; margin: 0 auto;">
-    <p style="text-align: center;">C++</p>
-    <div class="bar-container"><div class="bar" style="width: 85%;">85%</div></div>
-    <p>Python</p>
-    <div class="bar-container"><div class="bar" style="width: 90%;">90%</div></div>
-    <p>Java</p>
-    <div class="bar-container"><div class="bar" style="width: 75%;">75%</div></div>
-    <p>JavaScript</p>
-    <div class="bar-container"><div class="bar" style="width: 80%;">80%</div></div>
-    <p>HTML/CSS</p>
-    <div class="bar-container"><div class="bar" style="width: 88%;">88%</div></div>
-    <p>React.js</p>
-    <div class="bar-container"><div class="bar" style="width: 78%;">78%</div></div>
-    <p>Node.js/Express.js</p>
-    <div class="bar-container"><div class="bar" style="width: 72%;">72%</div></div>
-    <p>MongoDB/SQL</p>
-    <div class="bar-container"><div class="bar" style="width: 70%;">70%</div></div>
+   <div class="section" id="skills">
+  <div class="container" style="text-align: center;">
+    <h2>Skills</h2>
+    <div class="skill-bar" style="text-align: center; max-width: 600px; margin: 0 auto;">
+      <p>C++</p>
+      <div class="bar-container"><div class="bar" style="width: 85%;">85%</div></div>
+      <p>Python</p>
+      <div class="bar-container"><div class="bar" style="width: 90%;">90%</div></div>
+      <p>Java</p>
+      <div class="bar-container"><div class="bar" style="width: 75%;">75%</div></div>
+      <p>JavaScript</p>
+      <div class="bar-container"><div class="bar" style="width: 80%;">80%</div></div>
+      <p>HTML/CSS</p>
+      <div class="bar-container"><div class="bar" style="width: 88%;">88%</div></div>
+      <p>React.js</p>
+      <div class="bar-container"><div class="bar" style="width: 78%;">78%</div></div>
+      <p>Node.js/Express.js</p>
+      <div class="bar-container"><div class="bar" style="width: 72%;">72%</div></div>
+      <p>MongoDB/SQL</p>
+      <div class="bar-container"><div class="bar" style="width: 70%;">70%</div></div>
+    </div>
   </div>
 </div>
+
 <style>
   .bar-container {
     background-color: #e0e0e0;
@@ -204,30 +207,51 @@
 </style>
 
     <div class="section" id="projects">
-  <h2>Projects</h2>
-      <div class="buttons" id="categoryButtons"></div>
-      <div class="projects" id="projectList"></div>
-    </div>
+  <div class="container" style="text-align: center;">
+    <h2>Projects</h2>
+    <div class="buttons" id="categoryButtons" style="margin-bottom: 1rem;"></div>
+    <div class="projects" id="projectList" style="justify-content: center;"></div>
+  </div>
+</div>
 
-    <div class="section" id="resume">
-  <h2>Resume</h2>
-      <a href="/RenderCV_EngineeringResumes_Theme%20(11).pdf" target="_blank">View My Resume (PDF)</a>
-    </div>
+
+   <div class="section" id="resume">
+  <div class="container" style="text-align: center;">
+    <h2>Resume</h2>
+    <a href="/RenderCV_EngineeringResumes_Theme%20(11).pdf" target="_blank">View My Resume (PDF)</a>
+  </div>
+</div>
+
 
     <div class="section" id="contact">
-  <h2>Contact Me</h2>
-      <form action="mailto:chodabathulamohanarangaji@gmail.com" method="POST" enctype="text/plain" style="margin-top: 2rem;">
-        <input type="text" name="name" placeholder="Your Name" required style="width: 80%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 5px; border: 1px solid #ccc;"><br>
-        <input type="email" name="email" placeholder="Your Email" required style="width: 80%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 5px; border: 1px solid #ccc;"><br>
-        <textarea name="message" rows="4" placeholder="Your Message" required style="width: 80%; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc;"></textarea><br>
-        <button type="submit" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #2563eb; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Send</button>
-      </form>
-      <div style="margin-top: 2rem; font-size: 0.95rem;">
-        <p>📞 Phone: <a href="tel:+918985696659">+91 89856 96659</a></p>
-        <p>💻 GitHub: <a href="https://github.com/mohan-1705" target="_blank">github.com/mohan-1705</a></p>
-        <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/chodabathula-mohana-rangaji-b55b9b269/" target="_blank">chodabathula-mohana-rangaji</a></p>
-        <p style="margin-top: 1rem; color: #888;">&copy; 2025 Chodabathula Mohana Rangaji. All rights reserved.</p>
-      </div>
+  <div class="section" id="contact">
+  <div class="container" style="text-align: center;">
+    <h2>Contact Me</h2>
+    <form action="mailto:chodabathulamohanarangaji@gmail.com" method="POST" enctype="text/plain" style="margin-top: 2rem;">
+      <input type="text" name="name" placeholder="Your Name" required 
+        style="display: block; width: 80%; max-width: 500px; padding: 0.5rem; margin: 0.5rem auto; border-radius: 5px; border: 1px solid #ccc;">
+      
+      <input type="email" name="email" placeholder="Your Email" required 
+        style="display: block; width: 80%; max-width: 500px; padding: 0.5rem; margin: 0.5rem auto; border-radius: 5px; border: 1px solid #ccc;">
+      
+      <textarea name="message" rows="4" placeholder="Your Message" required 
+        style="display: block; width: 80%; max-width: 500px; padding: 0.5rem; margin: 0.5rem auto; border-radius: 5px; border: 1px solid #ccc;"></textarea>
+      
+      <button type="submit" 
+        style="margin-top: 1rem; padding: 0.5rem 1rem; background: #2563eb; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+        Send
+      </button>
+    </form>
+
+    <div style="margin-top: 2rem; font-size: 0.95rem;">
+      <p>📞 Phone: <a href="tel:+918985696659">+91 89856 96659</a></p>
+      <p>💻 GitHub: <a href="https://github.com/mohan-1705" target="_blank">github.com/mohan-1705</a></p>
+      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/chodabathula-mohana-rangaji-b55b9b269/" target="_blank">chodabathula-mohana-rangaji</a></p>
+      <p style="margin-top: 1rem; color: #888;">&copy; 2025 Chodabathula Mohana Rangaji. All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
     </div>
     </div>
 
