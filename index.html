@@ -170,29 +170,30 @@
   </div>
 </div>
 
-   <div class="section" id="skills">
+ <div class="section" id="skills">
   <div class="container" style="text-align: center;">
     <h2>Skills</h2>
-    <div class="skill-bar" style="text-align: center; max-width: 600px; margin: 0 auto;">
+    <div class="skill-bar" style="max-width: 600px; margin: 0 auto;">
       <p>C++</p>
-      <div class="bar-container"><div class="bar" style="width: 85%;">85%</div></div>
+      <div class="bar-container"><div class="bar" data-percentage="85">0%</div></div>
       <p>Python</p>
-      <div class="bar-container"><div class="bar" style="width: 90%;">90%</div></div>
+      <div class="bar-container"><div class="bar" data-percentage="90">0%</div></div>
       <p>Java</p>
-      <div class="bar-container"><div class="bar" style="width: 75%;">75%</div></div>
+      <div class="bar-container"><div class="bar" data-percentage="75">0%</div></div>
       <p>JavaScript</p>
-      <div class="bar-container"><div class="bar" style="width: 80%;">80%</div></div>
+      <div class="bar-container"><div class="bar" data-percentage="80">0%</div></div>
       <p>HTML/CSS</p>
-      <div class="bar-container"><div class="bar" style="width: 88%;">88%</div></div>
+      <div class="bar-container"><div class="bar" data-percentage="88">0%</div></div>
       <p>React.js</p>
-      <div class="bar-container"><div class="bar" style="width: 78%;">78%</div></div>
+      <div class="bar-container"><div class="bar" data-percentage="78">0%</div></div>
       <p>Node.js/Express.js</p>
-      <div class="bar-container"><div class="bar" style="width: 72%;">72%</div></div>
+      <div class="bar-container"><div class="bar" data-percentage="72">0%</div></div>
       <p>MongoDB/SQL</p>
-      <div class="bar-container"><div class="bar" style="width: 70%;">70%</div></div>
+      <div class="bar-container"><div class="bar" data-percentage="70">0%</div></div>
     </div>
   </div>
 </div>
+
 
 <style>
   .bar-container {
@@ -219,6 +220,27 @@
     0% { width: 0; }
     100% { width: var(--target-width); }
   }
+
+.bar-container {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.bar {
+  height: 24px;
+  line-height: 24px;
+  background-color: #2563eb;
+  color: white;
+  text-align: right;
+  padding-right: 10px;
+  border-radius: 10px 0 0 10px;
+  width: 0;
+  transition: width 2s ease;
+}
+
+
 </style>
 
     <div class="section" id="projects">
@@ -356,6 +378,33 @@ themeImg.addEventListener('click', () => {
     ? 'https://cdn-icons-png.flaticon.com/512/869/869869.png'  // Sun icon
     : 'https://cdn-icons-png.flaticon.com/512/169/169367.png'; // Moon icon
 });
+
+function animateSkillBars() {
+  const skillSection = document.getElementById('skills');
+  const bars = document.querySelectorAll('.bar');
+
+  if (!skillSection.classList.contains('animated') &&
+      skillSection.getBoundingClientRect().top < window.innerHeight * 0.85) {
+    bars.forEach(bar => {
+      const target = parseInt(bar.getAttribute('data-percentage'));
+      let current = 0;
+      const interval = setInterval(() => {
+        if (current >= target) {
+          clearInterval(interval);
+        } else {
+          current++;
+          bar.style.width = current + '%';
+          bar.textContent = current + '%';
+        }
+      }, 15);
+    });
+    skillSection.classList.add('animated');
+  }
+}
+
+window.addEventListener('scroll', animateSkillBars);
+window.addEventListener('load', animateSkillBars);
+
 
 </script>
 </body>
