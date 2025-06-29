@@ -282,8 +282,7 @@
 
     </div>
     </div>
-
-  <script>
+<script src="https://unpkg.com/scrollreveal"
     const projects = [
       { title: 'Job Portal', category: 'Web App', description: 'A job portal built with modern tech for job listings and applications.', link: 'https://github.com/mohan-1705/Job-portal' },
       { title: 'My Voice Assistant', category: 'AI/ML', description: 'A Python-based voice assistant to automate tasks with speech commands.', link: 'https://github.com/mohan-1705/My_Voice_Assistant' },
@@ -405,6 +404,13 @@ function animateSkillBars() {
 window.addEventListener('scroll', animateSkillBars);
 window.addEventListener('load', animateSkillBars);
 
+  ScrollReveal().reveal('.sr-section', {
+    distance: '50px',
+    origin: 'bottom',
+    opacity: 0,
+    duration: 800,
+    interval: 200
+  });
 
 </script>
 </body>
