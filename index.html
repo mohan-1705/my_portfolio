@@ -146,22 +146,15 @@
 
 <!-- Bootstrap Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  
-  <!-- Theme Toggle Icon inside navbar, aligned right -->
-  <div class="ml-auto d-flex align-items-center">
-    <img id="themeToggleImg"
-      src="https://cdn-icons-png.flaticon.com/512/169/169367.png"
-      alt="Toggle Theme"
-      style="width: 30px; height: 30px; cursor: pointer; margin-right: 1rem;">
-    
-    <!-- Navbar Toggler for mobile -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
+  <a class="navbar-brand font-weight-bold" href="#">My Portfolio</a>
 
-  <!-- Collapsible Links -->
+  <!-- Navbar toggler (for small screens) -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible navbar links -->
   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -170,6 +163,14 @@
       <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
       <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
     </ul>
+  </div>
+
+  <!-- Theme Toggle Icon (always on the far right) -->
+  <div class="d-flex align-items-center ml-auto">
+    <img id="themeToggleImg"
+      src="https://cdn-icons-png.flaticon.com/512/169/169367.png"
+      alt="Toggle Theme"
+      style="width: 30px; height: 30px; cursor: pointer; margin-right: 1rem;">
   </div>
 </nav>
     <h1 class="text-center my-4">✨ My Portfolio</h1>
